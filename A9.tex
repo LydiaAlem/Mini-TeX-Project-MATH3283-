@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{ amssymb }
+\usepackage[a4paper, total={6in, 10in}]{geometry} %adjusting size of pdf
+
+\title{A9 Mini-TeX Project}
+\author{Lydia Alem}
+\date{November 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+%Proof question
+Prove that if $n \in \mathbb{Z}^{+}$  and when sin $\not=$ 0,
+$$(cos(\theta))(cos(2\theta)(cos(4\theta))(cos(8\theta)))...(cos(2^{n-1}(\theta))) = \frac{sin2^{n}(\theta)}{2^{n}sin(\theta)}$$
+
+
+\section{Proof}
+%base-case
+Base Case: P(1) must be true: $$(cos(2^{0}(\theta))) = \frac{sin(2^{1}(\theta)}{2^{1} 
+%writing the ptoley's indentity
+sin(\theta)}$$ $$\fbox{\textbf{Recall the Ptoley's Indentities: $sin(\theta + \theta) = sin(2\theta) = 2(sin(\theta) cos(\theta))$ }}$$
+$$cos(\theta) = \frac{2(sin(\theta)cos(\theta))}{2sin(\theta)}$$
+$$cos(\theta) = cos(\theta) $$
+$ \blacksquare $ %adding end of proof notation
+
+%hypothesis:
+Hypothesis: 
+$$ (cos(\theta))(cos(2\theta)(cos(4\theta))(cos(8\theta)))...(cos(2^{k-1}(\theta))) = \frac{sin2^{k}(\theta)}{2^{k}sin(\theta)}$$
+
+%proving hypothesis:
+Proof(k+1) = 
+$$ (cos(\theta))(cos(2\theta)(cos(4\theta))(cos(8\theta)))...(cos(2^{k-1}(\theta))cos(2^{k}(\theta)) = \frac{sin2^{k+1}(\theta)}{2^{k+1}sin(\theta)}$$
+
+$$ =\frac{sin2^{k}(\theta)}{2^{k}sin(\theta)}(cos2^{k}(\theta))$$
+%writing def of double angle
+
+$$\fbox{\textbf{Recall the Double Angle Formula: $2sin(\alpha)cos(\alpha) = sin2(\alpha)$ }}$$
+
+
+
+$$= \frac{sin(2\cdot2^{k}(\theta))}{2\cdot2^{k}sin(\theta)}$$
+
+% $$\frac{sin(2^{k+1}(\theta)}{2^{k+1}}sin(\theta)$$
+
+$$= \frac{sin(2^{k+1}(\theta)}{2^{k+1}sin(\theta)}$$
+$ \blacksquare $ 
+
+
+Using Proof by Induction, I was able to prove that there exists a positive number that supports the proof question. 
+\end{document}
